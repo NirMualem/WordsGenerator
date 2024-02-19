@@ -1,20 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { ImageBackground, StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { Main } from './Navigation/Main';
+import { Logo } from './Component/Logo';
+import { styles } from './Style/Styles';
 
+const Background = require('./assets/WordsBackground.png');
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    return (
+        <NavigationContainer>
+            <ImageBackground source={Background} style={styles.backgroundImage}>
+            <Logo/>
+            <Main/>
+            <StatusBar style="auto" />
+            </ImageBackground>
+        </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
